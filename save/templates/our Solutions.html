@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--boostrap4 -->
+    <link rel="icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
+    <!--boostrap4 -->
+    
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+     <!--customstyles-->
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+   
+    <title>Our Solutions</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color navbar-fixed-top">
+        <a class="pl-5 navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'assets/img/logo.png' %}" alt="" width="200" />
+        </a>
+        <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse padset" id="basicExampleNav">
+
+            <ul class="navbar-nav mr-auto" id="#magic-line">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'who' %}">Who we are
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'solution' %}">Our Solutions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+                </li>
+            </ul>
+            <div id="navsec2">
+                <span class="pr-2">
+                    <a href="/accounts/login/" class="btn btn-primary btn-sm">Login &ensp;</a>
+                </span>
+                <span class="pl-2">
+                    <a href="/accounts/signup/" class="btn btn-primary btn-sm">Sign up</a>
+                </span>
+            </div>
+        </div>
+
+    </nav>
+    <!--/.Navbar-->
+
+
+
+    <section id="">
+        <main class="container pb-1">
+            <div class="row">
+                <div class="col-md-6 p-5">
+                    <div class="sec-1 text-center p-4">
+                        <img src="{% static 'assets/img/1.jpg' %}" alt="" class="">
+                        <p class="font-weight-bold h4 mx-auto p-2 text-justify">
+                            The kobosave mobile app to trade directly with dealers and manage payments for goods and
+                            services </p>
+                        <br>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 px-5" id="kobo-api">
+                    <div class="sec-2 text-center pb-3">
+                        <img src="{% static 'assets/img/2.jpg' %}" alt="" class="pt-2">
+                        <p class="font-weight-bold h4 p-3 mb-5 text-justify">
+                            The Kobosave API which will be integrated into eccomerce platforms as a payment option
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <footer class="footer-2 py-4 col-12">
+        <div class=" text-center" id="foot-sec">
+            <a href="sign in.html" class="font-weight-bold">join our waitlist</a>
+        </div>
+    </footer>
+    <!--/.content section-->
+
+
+
+    <!-- jQuery library -->
+   <script type='text/javascript' src="{% static 'assets/js/jquery.min.js' %}"></script>
+<!--popper-->
+<script type='text/javascript' src="{% static 'assets/js/popper.min.js' %}"></script>
+<!--boostrap4 js-->
+<script type='text/javascript' src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<!-- scripts -->
+<script type='text/javascript' src="{% static 'assets/js/scripts.js' %}"></script>
+
+
+
+    <script>
+
+    </script>
+</body>
+
+</html>

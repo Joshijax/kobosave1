@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="10" /> -->
+    <!--boostrap4 -->
+    
+    <!-- fonticons -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome/css/all.css' %}">
+    <!--customstyles-->
+    <link rel="icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
+    <!--boostrap4 -->
+    
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+     <!--customstyles-->
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <title>PROFILE</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color navbar-fixed-top">
+        <a class="pl-5 navbar-brand" href="index.html">
+            <p class="text-primary font-weignt-bold h3" style="font-family:Arial, Helvetica, sans-serif;">
+                Asemota
+                Izoduwa</p>
+        </a>
+        <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse padset" id="basicExampleNav">
+
+            <ul class="navbar-nav mr-auto" id="#magic-line">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'orders' %}">Orders
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-pada">
+                    <a class="nav-link" href="{% url 'dashboard' %}">Payments</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
+                </li>
+            </ul>
+            <div id="navsec2">
+                <a href="{% url 'logout' %}" class="font-weight-bold" style="color:black;">Logout</a>
+                </span>
+            </div>
+        </div>
+    </nav>
+    <!--/.Navbar-->
+    <section id="content-sec">
+        <main class="container" style="padding-bottom:50px;">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 pl-4"
+                    style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+
+                    <div class="order-side-bar-sec-2 py-4">
+                        <h5 class="pb-3">
+                            <a href="" style="color:black;" id="profileview"> View Profile <i id="viewarr1"
+                                    class="text-warning">
+                                    &RightArrow;</i></a>
+                        </h5>
+                        <h5>
+                            <a href="" style="color:black;" id="profileedit"> Edit Profile <i id="editarr2"
+                                    class="text-warning d-none">
+                                    &RightArrow;</i></a>
+                        </h5>
+                    </div>
+                </div>
+
+
+                <div id="profileviewdiv" class="row"></div>
+
+                <div id="profileeditdiv" class="row d-none">
+                    <div class="col-md-6 py-5 pl-5">
+                        <img src="assets/img/profile.png" alt="" height="200" width="200"
+                            class="img-responsive thumbnail">
+                    </div>
+                    <div class="col-md-10">
+                        <p class="px-3 h2"> User information</p>
+
+                        <form class="text-center border border-light p-5" action="#!">
+                            <fieldset class="text-left font-weight-bold">
+                                <div class="row">
+                                    <label for="profilefirstname" class="col-6">First name:
+                                        <input type="text" id="profilefirstname" class="form-control mb-4"
+                                            placeholder="First name">
+                                    </label>
+                                    <label for="profilelastname" class="col-6">Last name:
+                                        <input type="text" id="profilelastname" class="form-control mb-4"
+                                            placeholder="Last name">
+                                    </label>
+                                </div>
+                                <label for="profilemial">Email</label>
+                                <input type="email" id="profilemial" class="form-control mb-4" placeholder="E-mail">
+
+                                <label for="phonenumber">Phone number:</label>
+                                <input type="number" id="phonenumber" class="form-control mb-4"
+                                    placeholder="Phone number">
+                            </fieldset>
+                            <div class="row my-4">
+                                <div class="col-6">
+                                    <button class="btn btn-default bg-white btn-sm" type="submit">
+                                        <b class="text-success">Save</b></button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-default bg-white btn-sm" type="submit">
+                                        <b class="text-danger">Discard</b></button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <!-- content section -->
+
+    <footer class="bg-white text-center" id="index-footer">
+        <!-- <a href="sign in.html" class="btn btn-white font-weight-bold text-center">Join our
+            waitlist</a> -->
+    </footer>
+
+    <!-- jQuery library -->
+    <script type='text/javascript' src="{% static 'assets/js/jquery.min.js' %}"></script>
+<!--popper-->
+<script type='text/javascript' src="{% static 'assets/js/popper.min.js' %}"></script>
+<!--boostrap4 js-->
+<script type='text/javascript' src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<!-- scripts -->
+<script type='text/javascript' src="{% static 'assets/js/scripts.js' %}"></script>
+
+
+    <script>
+        var profileview = document.getElementById("profileview");
+        var profileedit = document.getElementById("profileedit");
+        var viewarr1 = document.getElementById("viewarr1");
+        var editarr2 = document.getElementById("editarr2");
+        var profileviewdiv = document.getElementById("profileviewdiv")
+        var profileeditdiv = document.getElementById("profileeditdiv");
+
+        profileview.addEventListener('click', showProfileView);
+        profileedit.addEventListener('click', showProfileEdit);
+
+        function showProfileView(event) {
+            event.preventDefault();
+            viewarr1.className = "text-warning";
+            editarr2.className = "d-none";
+            profileviewdiv.className = "row";
+            profileeditdiv.className = "d-none";
+
+        };
+        function showProfileEdit(event) {
+            event.preventDefault();
+            viewarr1.className = "d-none";
+            editarr2.className = "text-warning";
+            profileviewdiv.className = "d-none";
+            profileeditdiv.className = "row";
+
+        };
+    </script>
+</body>
+
+</html>

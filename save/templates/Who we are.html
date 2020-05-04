@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--boostrap4 -->
+    <link rel="icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
+    <!--boostrap4 -->
+    
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+     <!--customstyles-->
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <title>Who We A</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color border-bottom border-primary navbar-fixed-top">
+        <a class="pl-5 navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'assets/img/logo.png' %}" alt="" width="200" />
+        </a>
+        <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse padset" id="basicExampleNav">
+
+            <ul class="navbar-nav mr-auto" id="#magic-line">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'who' %}">Who we are
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'solution' %}">Our Solutions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+                </li>
+            </ul>
+            <div id="navsec2">
+                <span class="pr-2">
+                    <a href="/accounts/login/" class="btn btn-primary btn-sm">Login &ensp;</a>
+                </span>
+                <span class="pl-2">
+                    <a href="/accounts/signup/" class="btn btn-primary btn-sm">Sign up</a>
+                </span>
+            </div>
+        </div>
+
+    </nav>
+    <!--/.Navbar-->
+
+
+
+    <section id="">
+
+        <main class="container">
+            <div class="row">
+                <div class="col-md-5 my-5 pt-5 mx-2">
+                    <p class="h2 text-left">Transforming trade in Africa, one installment at a time by giving
+                        everyone access to
+                        high value
+                        products and service at installment rates
+                    </p>
+                </div>
+
+                <div class="col-md-6 my-4 pb-5">
+                    <img src="{% static 'assets/img/who-we-are.jpg' %}" alt="" class="image-1">
+                </div>
+            </div>
+        </main>
+
+    </section>
+    <footer class="footer-2 p-4 col-12">
+        <div class="text-center">
+            <a href="sign in.html" class="font-weight-bold">join our waitlist</a>
+        </div>
+    </footer>
+    <!--/.content section-->
+
+
+
+    <!-- jQuery library -->
+    <script type='text/javascript' src="{% static 'assets/js/jquery.min.js' %}"></script>
+<!--popper-->
+<script type='text/javascript' src="{% static 'assets/js/popper.min.js' %}"></script>
+<!--boostrap4 js-->
+<script type='text/javascript' src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<!-- scripts -->
+<script type='text/javascript' src="{% static 'assets/js/scripts.js' %}"></script>
+
+</body>
+
+</html>
