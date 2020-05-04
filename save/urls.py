@@ -20,3 +20,9 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('logout/', views.logout_request, name='logout'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
