@@ -6,8 +6,8 @@ class SignupForm(forms.Form):
     email = forms.EmailField(max_length=255, label="Email")
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control mb-4', 'placeholder':'input your password' }), label="Password")
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control mb-4', 'placeholder':'input your password' }), label="Password (again)")
-    last_name = forms.CharField(max_length=60, label='Last Name')
-    first_name = forms.CharField(max_length=60, label='First Name')
+    last_name = forms.CharField(max_length=60, label='Last Name', widget=forms.TextInput(attrs={'placeholder':'First Name', 'class':'form-control col-6' }), required=False)
+    first_name = forms.CharField(max_length=60, label='First Name', widget=forms.TextInput(attrs={'placeholder':'First Name', 'class':'form-control col-6' }), required=False)
 
  
     def signup(self, request, user):
