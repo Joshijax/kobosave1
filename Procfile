@@ -1,0 +1,1 @@
+web: gunicorn kobosave.wsgi --log-file -
