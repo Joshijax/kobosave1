@@ -25,7 +25,7 @@ SECRET_KEY = 'la2(pl4ja@1r2**%5pxy))m@9rg0bhfx=l)57)oe=25h)(xd!b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'kobosave.herokuapp.com']
 
 
 # Application definition
@@ -149,6 +149,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT =  os.path.join(BASE_DIR, 'staticfiles')
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
