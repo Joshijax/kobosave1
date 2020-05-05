@@ -181,13 +181,14 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_SIGNUP_FORM_CLASS = 'save.forms.SignupForm'
+ACCOUNT_FORMS = {'login': 'save.forms.LoginForm'}
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/payment-dashboard/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
- 
- 
+   
+   
 EMAIL_HOST_USER = 'kobosaveng@gmail.com'
 EMAIL_HOST_PASSWORD = 'teagcjkakfvbxxcm'
 EMAIL_USE_TLS = True
