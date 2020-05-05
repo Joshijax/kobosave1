@@ -2,7 +2,6 @@ from django import forms
 from django.contrib.auth.models import User
 from .models import Company
 from allauth.account.forms import LoginForm
-from allauth.account.adapter import DefaultAccountAdapter
 from allauth.account import app_settings
 from allauth.account.adapter import get_adapter
 from allauth.account.app_settings import AuthenticationMethod
