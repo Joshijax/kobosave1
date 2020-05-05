@@ -1,76 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base/base.html' %}
+{% block content %}
+{% load static %}
 
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
-    <!-- <meta http-equiv="refresh" content="10" /> -->
-    <!--boostrap4 -->
-    <link rel="icon" href="{% static 'assets/img/mylogo.png' %}" type="image/x-icon">
-    <!--boostrap4 -->
-    
-    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-     <!--customstyles-->
-    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-    
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark primary-color navbar-fixed-top">
-        <a class="pl-5 navbar-brand" href="{% url 'index' %}">
-            <img src="{% static 'assets/img/logo.png' %}" alt="" width="200" />
-        </a>
-        <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse padset" id="basicExampleNav">
-
-            <ul class="navbar-nav mr-auto" id="#magic-line">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'who' %}">Who we are
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'solution' %}">Our Solutions</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
-                </li>
-            </ul>
-            <div id="navsec2">
-                {% if user.is_authenticated %}
-                
-                <span class="pr-2">
-                    <a href="{% url 'dashboard' %}" class="btn btn-primary btn-sm">Dashboard &ensp;</a>
-                </span>
-                <span class="pl-2">
-                    <a href="{% url 'logout' %}" class="btn btn-primary btn-sm">Logout</a>
-                </span>
-                {% else %}
-                <span class="pr-2">
-                    <a href="/accounts/login/" class="btn btn-primary btn-sm">Login &ensp;</a>
-                </span>
-                <span class="pl-2">
-                    <a href="/accounts/signup/" class="btn btn-primary btn-sm">Sign up</a>
-                </span>
-                
-                {% endif %}
-            </div>
-        </div>
-
-    </nav>
-    <!--/.Navbar-->
-    <section id="content-sec">
-        <img src="{% static 'assets/img/top-left-decor.png ' %}" alt="" id="top-left-decor" />
-        <img src="{% static 'assets/img/top-mid-decor.png' %}" alt="" id="top-mid-decor" />
+    <section id="content-sec">        
         <main class="container">
-            <div class="row">
+            <div class="row row-sec">
                 <div class="col-md-5 para1 text-center">
                     <p class="h1 my-3">
                         Make payments on <br> your own terms
@@ -81,10 +15,7 @@
                 </div>
                 <div class="col-md-6 offset-1">
                     <div id="bg-col-2-deco">
-                        <img src=" {% static 'assets/img/bg-col-2-deco.png' %}" class="bg-col-2-deco-img" alt="" />
-
-                        <img src="{% static 'assets/img/right-mid-decor.png' %}" alt="" id="right-mid-decor" />
-                        <img src="{% static 'assets/img/low-left-decor.png' %}" alt="" id="low-left-decor" />
+                        <img src=" {% static 'assets/img/bg-col-2-deco.png' %}" class="bg-col-2-deco-img" alt="" />                      
                     </div>
                 </div>
             </div>
@@ -99,20 +30,4 @@
     </footer>
 
 
-
-
-    <!-- jQuery library -->
-    <script type='text/javascript' src="{% static 'assets/js/jquery.min.js' %}"></script>
-<!--popper-->
-<script type='text/javascript' src="{% static 'assets/js/popper.min.js' %}"></script>
-<!--boostrap4 js-->
-<script type='text/javascript' src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-<!-- scripts -->
-<script type='text/javascript' src="{% static 'assets/js/scripts.js' %}"></script>
-
-
-
-
-</body>
-
-</html>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="10" /> -->
+    <!--boostrap4 -->
+    <link rel="icon" href="{% static 'assets/img/mylogo.png' %}" type="image/x-icon">
+    <!--boostrap4 -->
+    
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+     <!--customstyles-->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+     <link rel="stylesheet" href="{% static 'assets/css/fontawesome/css/all.css' %}">
+    <title>{{page_title}}</title>
+</head>
+<body>
+    {% include "base/navbar.html" %}
+    
+    {% block content %}
+
+    {% endblock content %}
+    <script type='text/javascript' src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <!--popper-->
+    <script type='text/javascript' src="{% static 'assets/js/popper.min.js' %}"></script>
+    <!--boostrap4 js-->
+    <script type='text/javascript' src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- scripts -->
+    {% include "base/scripts.html" %}
+</script>  
+</body>
+</html>
+

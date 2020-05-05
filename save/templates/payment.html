@@ -1,56 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+{% extends 'base/base.html' %}
+{% block content %}
 {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="refresh" content="10" /> -->
-    <!--boostrap4 -->
-    <link rel="icon" href="{% static 'assets/img/mylogo.png' %}" type="image/x-icon">
-    <!--boostrap4 -->
-    
-    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-     <!--customstyles-->
-    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-     <link rel="stylesheet" href="{% static 'assets/css/fontawesome/css/all.css' %}">
-    <title>PAYMENT</title>
-</head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark primary-color navbar-fixed-top">
-        <a class="pl-5 navbar-brand" href="index.html">
-            <p class="text-primary font-weignt-bold h3" style="font-family:Arial, Helvetica, sans-serif;">
-                {{request.user.first_name }} {{request.user.last_name }}</p>
-        </a>
-        <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse padset" id="basicExampleNav">
-
-            <ul class="navbar-nav mr-auto" id="#magic-line">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'orders' %}">Orders
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item nav-pada active">
-                    <a class="nav-link" href="{% url 'dashboard' %}">Payments</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
-                </li>
-            </ul>
-            <div id="navsec2">
-                <a href="{% url 'logout' %}" class="font-weight-bold" style="color:black;">Logout</a>
-                </span>
-            </div>
-        </div>
-    </nav>
-    <!--/.Navbar-->
-    <section id="content-sec">
+    <section id="pay-content">
         <main class="container-fluid" style="padding-bottom:50px;">
             <div class="row">
                 <div class="col-md-3 col-lg-3 pl-4"
@@ -241,67 +193,4 @@
         <!-- <a href="sign in.html" class="btn btn-white font-weight-bold text-center">Join our
             waitlist</a> -->
     </footer>
-
-    <!-- jQuery library -->
-    <script type='text/javascript' src="{% static 'assets/js/jquery.min.js' %}"></script>
-<!--popper-->
-<script type='text/javascript' src="{% static 'assets/js/popper.min.js' %}"></script>
-<!--boostrap4 js-->
-<script type='text/javascript' src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-<!-- scripts -->
-<script type='text/javascript' src="{% static 'assets/js/scripts.js' %}"></script>
-
-
-    <script>
-        var autosave = document.querySelector("input[id=autosave]");
-        var quickPay = document.querySelector("input[id=quickPay]");
-        var autosave = document.getElementById("autosave");
-        var wallet = document.getElementById("wallet");
-        var mngcard = document.getElementById("mngcard");
-        var walletarr = document.getElementById("walletarr");
-        var mngcardarr = document.getElementById("mngcardarr");
-        var toggleq = document.getElementById("toggleq");
-
-        var pay_sec_1 = document.getElementById("pay_sec_1");
-        var pay_sec_2 = document.getElementById("pay_sec_2");
-
-        autosave.checked = true;
-        wallet.addEventListener('click', manageWallet);
-        mngcard.addEventListener('click', manageCard);
-
-
-
-        quickPay.addEventListener('change', function () {
-            if (this.checked) {
-                toggleq.className = 'row py-5';
-            } else {
-                toggleq.className = 'row py-5 d-none ';
-            }
-        });
-        autosave.addEventListener('change', function () {
-            if (this.checked) {
-                toggleq.className = 'row py-5 d-none';
-            } else {
-                toggleq.className = 'row py-5';
-            }
-        });
-
-        function manageWallet(event) {
-            event.preventDefault();
-            walletarr.className = "text-warning"
-            mngcardarr.className = "d-none"
-            pay_sec_1.className = ""
-            pay_sec_2.className = "d-none"
-
-        };
-        function manageCard(event) {
-            event.preventDefault();
-            walletarr.className = "d-none";
-            mngcardarr.className = "text-warning";
-            pay_sec_1.className = "d-none"
-            pay_sec_2.className = ""
-        };
-    </script>
-</body>
-
-</html>
+ {% endblock content %}

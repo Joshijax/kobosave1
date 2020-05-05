@@ -1,0 +1,82 @@
+{% load static %}
+ {% if  request.path == '/' or  request.path == '/Our-Solutions' or  request.path == '/Who-We-Are/' or request.path == '/contact-us/' %}
+ <nav class="navbar navbar-expand-lg navbar-dark primary-color navbar-fixed-top">
+        <a class="pl-5 navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'assets/img/logo.png' %}" alt="" width="200" />
+        </a>
+        <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+ 
+        <div class="collapse navbar-collapse padset" id="basicExampleNav">
+
+            <ul class="navbar-nav mr-auto" id="#magic-line">
+                <li {% if request.path == '/Who-We-Are/' %} class="nav-item active" {%else%} class="nav-item" {% endif %}>
+                    <a class="nav-link" href="{% url 'who' %}">Who we are
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li {% if request.path == '/Our-Solutions' %} class="nav-item active" {%else%} class="nav-item" {% endif %}>
+                    <a class="nav-link" href="{% url 'solution' %}">Our Solutions</a>
+                </li>
+                <li {% if request.path == '/contact-us/' %} class="nav-item active" {%else%} class="nav-item" {% endif %}>
+                    <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+                </li>
+            </ul>
+            <div id="navsec2">
+                {% if user.is_authenticated %}                
+                <span class="pr-2">
+                    <a href="{% url 'dashboard' %}" class="btn btn-primary btn-sm">Dashboard &ensp;</a>
+                </span>
+                <span class="pl-2">
+                    <a href="{% url 'logout' %}" class="btn btn-primary btn-sm">Logout</a>
+                </span>
+                {% else %}
+                <span class="pr-2">
+                    <a href="/accounts/login/" class="btn btn-primary btn-sm">Login &ensp;</a>
+                </span>
+                <span class="pl-2">
+                    <a href="/accounts/signup/" class="btn btn-primary btn-sm">Sign up</a>
+                </span>                
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+{% elif request.path == '/payment-dashboard/' or  request.path == '/orders/' or request.path == '/profile/' %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color navbar-fixed-top">
+        <a class="pl-5 navbar-brand" href="{% url 'profile' %}">
+            <p class="text-primary font-weignt-bold h3" style="font-family:Arial, Helvetica, sans-serif;">
+                {{request.user.first_name }} {{request.user.last_name }}</p>
+        </a>
+        <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse padset" id="basicExampleNav">
+
+            <ul class="navbar-nav mr-auto" id="#magic-line">
+                <li {% if request.path == '/orders/' %} class="nav-item active" {%else%} class="nav-item" {% endif %}>
+                    <a class="nav-link" href="{% url 'orders' %}">Orders
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li {% if request.path == '/payment-dashboard/' %} class="nav-item nav-pada active" {%else%} class="nav-item nav-pada" {% endif %}>               
+                    <a class="nav-link" href="{% url 'dashboard' %}">Payments</a>
+                </li>
+                <li {% if request.path == '/profile/' %} class="nav-item active" {%else%} class="nav-item" {% endif %}>
+                    <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
+                </li>
+            </ul>
+            <div id="navsec2">
+                {% if request.user.is_authenticated %}  
+                <a href="{% url 'logout' %}" class="font-weight-bold" style="color:black;">Logout</a>
+                {% endif %}
+                </span>
+            </div>
+        </div>
+    </nav>
+    {% endif %}
+    

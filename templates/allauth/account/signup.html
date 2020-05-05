@@ -1,170 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+{% extends 'base/base.html' %}
+{% block content %}
 {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--favi-->
-    <link rel="icon" href="{% static 'assets/img/mylogo.png' %}" type="image/x-icon">
-    <!--boostrap4 -->
-    
-    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-     <!--customstyles-->
-    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-   
-    
-    
-    
-    <title>SIGN IN</title>
-</head>
+<section id="content-sec-4">
+    <center>
+        <a class="index.html" href="{% url 'index' %}">
+            <img src="{% static 'assets/img/logo.png' %}" alt="" width="200" />
+        </a>
+    </center>
 
-<body>
-    <section id="content-sec-4">
-        <center>
-            <a class="index.html" href="{% url 'index' %}">
-                <img src="{% static 'assets/img/logo.png' %}" alt="" width="200" />
-            </a>
-        </center>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="font-weight-bold h2 py-5">
-                        What do you need a kobosave account for?
-                    </p>
-                    <div class="shadow p-4 mb-5">
-                        <input type="radio" class="" name="kobobuy" id="kobobuy">
-                        <label for="kobobuy" class="case p-2 h6">
-                            I want to buy on Kobosave
-                            &ensp; &ensp; &ensp;
-                        </label>
-                    </div>
-
-                    <div class="shadow p-4 mt-5">
-                        <input type="radio" name="kobobuy" id="kobosell">
-                        <label for="kobosell" class="case p-2 h6">
-                            I want to sell with Kobosave
-                            &ensp; &ensp;
-                        </label>
-
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="font-weight-bold h2 py-5">
+                    What do you need a kobosave account for?
+                </p>
+                <div class="shadow p-4 mb-5" id="k-buy">
+                    <input type="radio" class="" name="kobobuy" id="kobobuy">
+                    <label for="kobobuy" class="case p-2 h6">
+                        I want to <span class="text-success font-weight-bold">Buy</span> on Kobosave
+                        &ensp; &ensp; &ensp;
+                    </label>
                 </div>
-                <div class="col-md-6 py-5">
-                    <div class="form-group shadow">
-                        <form class="text-center border border-light p-3 mx-1 card" id="signup_form" method="post" action="{% url 'account_signup' %}">{% csrf_token %}
-                            <fieldset class="text-left font-weight-bold">
-                            
 
-                                {% if form.errors %}
-                                    {% for field in form %}
-                                        {% for error in field.errors %}
-                                            <div class="alert alert-danger">
-                                                <strong>{{ error|escape }}</strong>
-                                            </div>
-                                        {% endfor %}
-                                    {% endfor %}
-                                    {% for error in form.non_field_errors %}
-                                        <div class="alert alert-danger">
-                                            <strong>{{ error|escape }}</strong>
-                                        </div>
-                                    {% endfor %}
-                                {% endif %}
-                               
-                                <input type="hidden" name="{{ redirect_field_name }}" value="/accounts/login/" />
-                                
-                                <p class="font-weight-bold mb-3 h3 text-center">Sign Up</p>
-                                <div id="pesform">
-                                    <label for="signupFormFormName"> Name</label>
-                                    <div id="signupFormFormName" class="row">
-                                        {% comment %} <input type="text" class="form-control col-6" placeholder="First Name"> {% endcomment %}
-                                        {{ form.first_name }}
-                                        
-                                        {{ form.last_name }}
-                                        {% comment %} <input type="text" id="" class="form-control mb-4 col-6"
-                                            placeholder="Last Name"> {% endcomment %}
-                                    </div>
+                <div class="shadow p-4 mt-5" id="k-sell">
+                    <input type="radio" name="kobobuy" id="kobosell">
+                    <label for="kobosell" class="case p-2 h6">
+                        I want to <span class="text-warning font-weight-bold">Sell</span> with Kobosave
+                        &ensp; &ensp;
+                    </label>
+
+                </div>
+            </div>
+            <div class="col-md-6 py-5" id="signup-form-sec">
+                <div class="form-group shadow">
+                    <form class="text-center border border-light p-3 mx-1 card" id="signup_form" method="post"
+                        action="{% url 'account_signup' %}">{% csrf_token %}
+                        <fieldset class="text-left font-weight-bold pad-form">
+
+                            {% if form.errors %}
+                            {% for field in form %}
+                            {% for error in field.errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                            {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+
+                            <input type="hidden" name="{{ redirect_field_name }}" value="/accounts/login/" />
+                            <p class="font-weight-bold mb-3 h3 text-center">Sign Up</p>
+
+                            <div class="row" id="pesform">
+                                <div class="col-md-6">
+                                    <label for="id_first_name"> First Name</label>
+                                    {{ form.first_name }}
                                 </div>
-                                
-                                <div style="display:none;" id="comform">
-                                    <label for="signupFormFormName"> Company Name</label>
-                                    {% comment %} <input type="text" id="signupFormFormName" class="form-control"
-                                        placeholder="Company Name"> {% endcomment %}
-                                        {{ form.company }}
+                                <div class="col-md-6">
+                                    <label for="id_last_name"> Name</label>
+                                    {{ form.last_name }}
                                 </div>
-
-                                <label for="id_email"> Email</label>
-                                <input type="email" id="id_email" class="form-control mb-4" required placeholder="E-mail address">
-                                {% comment %} {{ form.email }} {% endcomment %}
-                                
+                            </div>
 
 
-                                <label for="id_password1">password</label>
-                                <input type="password" name='password1' id="id_password1"  required class="form-control mb-4" placeholder="Password">
 
-                                <label for="id_password1">password again</label>
-                                <input type="password" name='password2' id="id_password2"  required class="form-control mb-4" placeholder="Password (again)">
-                                    {% comment %} {{ form.password1 }}
-                                    {{ form.password2 }} {% endcomment %}
-                                    
 
-                                <div class="form-check text-left my-2 h6 pb-3">
-                                    <input type="checkbox" class="form-check-input" id="materialRegisterFormNewsletter">
-                                    <label class="form-check-label" for="materialRegisterFormNewsletter">By clcking
-                                        proceeding I agree to abide by the <a href=""> Terms of Service</a> and <a
-                                            href="">Privacy Policy</a> offered
-                                        by Kobosav</label>
-                                </div>
-                                <button class="btn btn-primary btn-xs col-4 offset-4 text" type="submit">Sign
-                                    in</button>
-                            </fieldset>
-                        </form>
-                    </div>
-                    <div class="text-center p-3 h6">
-                        Don’t have an account? <a class="text-primary" href="/accounts/login">Click here</a>
-                    </div>
+
+                            <div style="display:none;" id="comform">
+                                <label for="signupFormFormName"> Company Name</label>
+                                {% comment %} <input type="text" id="signupFormFormName" class="form-control"
+                                    placeholder="Company Name"> {% endcomment %}
+                                {{ form.company }}
+                            </div>
+
+                            <label for="id_email"> Email</label>
+                            <input type="email" id="id_email" class="form-control mb-4" required
+                                placeholder="E-mail address">
+                            {% comment %} {{ form.email }} {% endcomment %}
+
+
+
+                            <label for="id_password1">password</label>
+                            <input type="password" name='password1' id="id_password1" required class="form-control mb-4"
+                                placeholder="Password">
+
+                            <label for="id_password1">password again</label>
+                            <input type="password" name='password2' id="id_password2" required class="form-control mb-4"
+                                placeholder="Password (again)">
+                            {% comment %} {{ form.password1 }}
+                            {{ form.password2 }} {% endcomment %}
+
+
+                            <div class="form-check text-left my-2 h6 pb-3">
+                                <input type="checkbox" class="form-check-input" id="materialRegisterFormNewsletter">
+                                <label class="form-check-label" for="materialRegisterFormNewsletter">By clcking
+                                    proceeding I agree to abide by the <a href=""> Terms of Service</a> and <a
+                                        href="">Privacy Policy</a> offered
+                                    by Kobosav</label>
+                            </div>
+                            <button class="btn btn-primary btn-xs col-4 offset-4 text" type="submit">Sign
+                                in</button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="text-center p-3 h6">
+                    Don’t have an account? <a class="text-primary" href="/accounts/login">Click here</a>
                 </div>
             </div>
         </div>
+    </div>
 
-    </section>
-
-
-</body>
-
-<!-- jQuery library -->
-<script type='text/javascript' src="{% static 'assets/js/jquery.min.js' %}"></script>
-<!--popper-->
-<script type='text/javascript' src="{% static 'assets/js/popper.min.js' %}"></script>
-<!--boostrap4 js-->
-<script type='text/javascript' src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-<!-- scripts -->
-<script type='text/javascript' src="{% static 'assets/js/scripts.js' %}"></script>
-
-<script>
-    document.getElementById("kobobuy").checked = true;
-    var kobosell = document.querySelector("input[id=kobosell]");
-    kobosell.addEventListener('change', function () {
-        if (this.checked) {
-            document.getElementById('comform').style = 'display:block';
-            document.getElementById('pesform').style = 'display:none';
-
-        } else {
-            document.getElementById('comform').style = 'display:none';
-            document.getElementById('pesform').style = 'display:block';
-        }
-    })
-    var kobobuy = document.querySelector("input[id=kobobuy]");
-    kobobuy.addEventListener('change', function () {
-        if (this.checked) {
-            document.getElementById('comform').style = 'display:none';
-            document.getElementById('pesform').style = 'display:block';
-        } else {
-            document.getElementById('comform').style = 'display:block';
-            document.getElementById('pesform').style = 'display:none';
-        }
-    })
-</script>
-</body>
-
-</html>
+</section>
+{% endblock content %}

@@ -10,6 +10,8 @@ from django.contrib import messages
 # Create your views here.
 
 
+
+
 def index(request):
     
     return render(request, 'index.html',)
@@ -67,4 +69,8 @@ def upload_profilePicx(request, user_id):
 
 def logout_request(request):
     logout(request)
+    return redirect('/')
+
+
+def handler404(request, exception):   
     return redirect('/')

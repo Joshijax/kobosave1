@@ -52,10 +52,23 @@ html, body{
     }
 
     #content-sec {
-        background-color: #f9f9f9 !important;      
-        padding-bottom: 200px;
+        background-color: #f9f9f9 !important;    
+        background-image: url('../img/index_bg_img.png');
+        background-size: 100%   95%;
+        background-repeat: no-repeat;
+        padding-top: 120px;
     }
 
+    .bg-col-2-deco-img{       
+        position: absolute;
+        /* top: 10px; */
+        right: 100px; 
+        width: 40vw;
+        padding-bottom: 100px;
+        }
+    .row-sec{
+        padding-bottom: 250px;
+    }
 
     .para1 p {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -67,44 +80,7 @@ html, body{
     .para1 small {
         font-family: sans-serif;
         font-style: normal;      
-    }
-
-  
-
-    #top-left-decor {
-        position: relative;
-        left: -1px;
-        width: 110px;
-    }
-
-    #top-mid-decor {
-        position: relative;
-        top: -34px;
-        right: -580px;
-        width: 140px;
-        z-index: 99;
-    }
-
-    #right-mid-decor {
-        position: relative;
-        left: 42vw;      
-        width: 100px;
-
-    }  
-  
- #low-left-decor {
-    position: absolute;
-    left: -380px;         
-    width: 150px;     
-    bottom: -200px;    
-        }
-
-        .bg-col-2-deco-img{       
-            position: absolute;
-            top: -80px;
-            right: 100px; 
-            width: 40vw;
-           }
+    }   
     
 
   
@@ -137,7 +113,9 @@ html, body{
         margin-top: 7px;
     }
 
-
+.pad-form{
+    padding:10px;
+}
 
     #content-sec-3 {
         background-image: url('../img/bg-1.png');
@@ -153,6 +131,8 @@ html, body{
     #set-form-post {
         position: relative;
         right: -300px;
+        padding: 100px;
+        
 
     }
 
@@ -168,11 +148,7 @@ html, body{
         color: #1b9dd9 !important;
     }
 
-    #set-form-post {
-        position: relative;
-        right: -300px;
 
-    }
 #kobo-api{
     padding-top: 45px;
 }
@@ -212,7 +188,28 @@ border-top: 0px solid #dee2e6;
     font-size:100px;
      border-radius: 25px;
 }
+.pay-content,.order-content, .profile-content{
+    background-color: #f9f9f9 !important;    
+}
+
+
     @media screen and (max-width:700px) {
+        #content-sec {
+            background-color: #f9f9f9 !important;    
+            background-image: url('../img/index_bg_img.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            /* padding-top: 120px; */
+        }
+
+        .bg-col-2-deco-img{
+            position: relative;
+            top: 25px;
+            right: 50px; 
+            width: 90vw;           
+        }
+        .row-sec{
+        padding-bottom: 0px;}
 
         #blibox{
             padding-left: 0px;
@@ -223,9 +220,6 @@ border-top: 0px solid #dee2e6;
             overflow: scroll;
         }
 
-        #content-sec {         
-            padding-bottom: 80px;
-        }
         .padset {
             padding-left: 0px;
         }
@@ -233,51 +227,21 @@ border-top: 0px solid #dee2e6;
             padding-right: 150px;
         }
        
-    
+      .para1 {
+          position: relative;
+          top:-97px;
+      }
 
          .para2 {           
             font-size: 12vw ;          
-        }
-    
-        #top-left-decor {
-            position: relative;
-            left: -1px;
-            width: 100px;
-        }
-    
-        #top-mid-decor {
-            position: relative;          
-            left: 150px;
-            top: -26px;
-           
-        }
-    
-        #right-mid-decor {           
-            position: absolute;
-            left: 82vw;      
-            width: 100px;
-        }        
-
-        #low-left-decor {
-            position: absolute;
-            left: -101px;         
-            width: 150px;     
+        }    
         
-            bottom: -80px;   
-                }
         
         #form-sec {
             margin-left: 0px;
-        }
-
-       
+        }      
       
-        .bg-col-2-deco-img{
-            position: relative;
-            top: 25px;
-            right: 50px; 
-            width: 90vw;
-        }
+      
         .image-1 {
             width: 100%;
         }
@@ -288,14 +252,11 @@ border-top: 0px solid #dee2e6;
         .sec-1 p {
             padding: 0px;
         }
+
         #set-form-post {
-
             right: 0px;
-
-        }
-        #set-form-post {
-
-            right: 0px;
+            padding: 12px;
+            
 
         }
         #kobo-api{
@@ -311,10 +272,16 @@ border-top: 0px solid #dee2e6;
             padding-right: 0px;
             padding-left: 0px;
         }
+        .pad-form{
+            padding:10px;
+        }
+        #signup-form-sec{          
+            display: none;
+        }
     
     }
-
-
+   
+    
     
     *,
     *:before,

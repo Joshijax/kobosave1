@@ -1,0 +1,171 @@
+{% load static %}
+{% if  request.path == '/profile/' %}
+<script>
+    var profileview = document.getElementById("profileview");
+    var profileedit = document.getElementById("profileedit");
+    var viewarr1 = document.getElementById("viewarr1");
+    var editarr2 = document.getElementById("editarr2");
+    var profileviewdiv = document.getElementById("profileviewdiv")
+    var profileeditdiv = document.getElementById("profileeditdiv");
+
+    profileview.addEventListener('click', showProfileView);
+    profileedit.addEventListener('click', showProfileEdit);
+
+    function showProfileView(event) {
+        event.preventDefault();
+        viewarr1.className = "text-warning";
+        editarr2.className = "d-none";
+        profileviewdiv.className = "row";
+        profileeditdiv.className = "d-none";
+
+    };
+    function showProfileEdit(event) {
+        event.preventDefault();
+        viewarr1.className = "d-none";
+        editarr2.className = "text-warning";
+        profileviewdiv.className = "d-none";
+        profileeditdiv.className = "row";
+
+    };
+</script>
+{% elif  request.path == '/payment-dashboard/' %}
+<script>
+    var autosave = document.querySelector("input[id=autosave]");
+    var quickPay = document.querySelector("input[id=quickPay]");
+    var autosave = document.getElementById("autosave");
+    var wallet = document.getElementById("wallet");
+    var mngcard = document.getElementById("mngcard");
+    var walletarr = document.getElementById("walletarr");
+    var mngcardarr = document.getElementById("mngcardarr");
+    var toggleq = document.getElementById("toggleq");
+
+    var pay_sec_1 = document.getElementById("pay_sec_1");
+    var pay_sec_2 = document.getElementById("pay_sec_2");
+
+    autosave.checked = true;
+    wallet.addEventListener('click', manageWallet);
+    mngcard.addEventListener('click', manageCard);
+
+
+
+    quickPay.addEventListener('change', function () {
+        if (this.checked) {
+            toggleq.className = 'row py-5';
+        } else {
+            toggleq.className = 'row py-5 d-none ';
+        }
+    });
+    autosave.addEventListener('change', function () {
+        if (this.checked) {
+            toggleq.className = 'row py-5 d-none';
+        } else {
+            toggleq.className = 'row py-5';
+        }
+    });
+
+    function manageWallet(event) {
+        event.preventDefault();
+        walletarr.className = "text-warning"
+        mngcardarr.className = "d-none"
+        pay_sec_1.className = ""
+        pay_sec_2.className = "d-none"
+
+    };
+    function manageCard(event) {
+        event.preventDefault();
+        walletarr.className = "d-none";
+        mngcardarr.className = "text-warning";
+        pay_sec_1.className = "d-none"
+        pay_sec_2.className = ""
+    };
+</script>
+
+{% elif  request.path == '/orders/' %}
+<script>
+    var arr1 = document.getElementById("arr1");
+    var arr2 = document.getElementById("arr2");
+    var balth = document.getElementById("balth");
+    var stath = document.getElementById("stath");
+    var bal_tr_1_td_1 = document.getElementById("bal_tr_1_td_1")
+    var bal_tr_1_td_2 = document.getElementById("bal_tr_1_td_2");
+    var bal_tr_2_td_1 = document.getElementById("bal_tr_2_td_1")
+    var bal_tr_2_td_2 = document.getElementById("bal_tr_2_td_2");
+    var sta_tr_1_td_1 = document.getElementById("sta_tr_1_td_1");
+    var sta_tr_2_td_1 = document.getElementById("sta_tr_2_td_1")
+    var sta_tr_2_td_2 = document.getElementById("sta_tr_2_td_2");
+    var pendingorder = document.getElementById('pendingorder');
+    var fulfilledorders = document.getElementById('fulfilledorders');
+    pendingorder.addEventListener('click', showPending);
+    fulfilledorders.addEventListener('click', showFulfilled);
+    function showPending(event) {
+        event.preventDefault();
+        arr1.className = "text-warning";
+        arr2.className = "text-warning d-none";
+        balth.className = "";
+        bal_tr_1_td_1.className = "py-4";
+        bal_tr_1_td_2.className = "py-4";
+        bal_tr_2_td_1.className = "";
+        bal_tr_2_td_2.className = "py-4";
+        stath.className = "d-none";
+        sta_tr_1_td_1.className = "d-none";
+        sta_tr_2_td_1.className = "d-none";
+        sta_tr_2_td_2.className = "d-none";
+    };
+    function showFulfilled(event) {
+        event.preventDefault();
+        arr1.className = "text-warning d-none";
+        arr2.className = "text-warning";
+        balth.className = "d-none";
+        bal_tr_1_td_1.className = "d-none";
+        bal_tr_1_td_2.className = "d-none";
+        bal_tr_2_td_1.className = "d-none";
+        bal_tr_2_td_2.className = "d-none";
+        stath.className = "";
+        sta_tr_1_td_1.className = "py-4";
+        sta_tr_2_td_1.className = "py-4";
+        sta_tr_2_td_2.className = "py-4";
+
+    };
+</script>
+
+{% elif  request.path == '/accounts/signup/' %}
+<script>
+
+
+    var kobosell = document.querySelector("input[id=kobosell]");
+    kobosell.addEventListener('change', function () {
+        if (this.checked) {
+            document.getElementById('signup-form-sec').style = 'display:block';
+            document.getElementById('comform').style = 'display:""';
+            document.getElementById('pesform').style = 'display:none';
+            document.getElementById('k-sell').style = 'display:none';
+            document.getElementById('k-buy').style = 'display:"block"';
+
+
+        } else {
+            document.getElementById('signup-form-sec').style = 'display:block';
+            document.getElementById('comform').style = 'display:none';
+            document.getElementById('pesform').style = 'display:""';
+            document.getElementById('k-sell').style = 'display:""';
+            document.getElementById('k-buy').style = 'display:none';
+
+        }
+    })
+    var kobobuy = document.querySelector("input[id=kobobuy]");
+    kobobuy.addEventListener('change', function () {
+        if (this.checked) {
+            document.getElementById('signup-form-sec').style = 'display:block';
+            document.getElementById('comform').style = 'display:none';
+            document.getElementById('pesform').style = 'display:""';
+            document.getElementById('k-buy').style = 'display:none';
+            document.getElementById('k-sell').style = 'display:""';
+        } else {
+            document.getElementById('signup-form-sec').style = 'display:block';
+            document.getElementById('comform').style = 'display:""';
+            document.getElementById('pesform').style = 'display:none';
+            document.getElementById('k-buy').style = 'display:none';
+            document.getElementById('k-sell').style = 'display:"block"';
+        }
+    });
+</script>
+{% endif%}
