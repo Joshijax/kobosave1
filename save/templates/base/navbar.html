@@ -54,7 +54,7 @@
                             <img src="{%static 'assets/img/profile.png' %}" alt="" height="40" width="40"
                             class="img-responsive thumbnail">
                     {% endif %}
-                {{request.user.first_name }} {{request.user.last_name }}</p>
+                <span style=' text-transform: capitalize;'> {{request.user.first_name }} {{request.user.last_name|slice:"1" }} .<span></p>
         </a>
         <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#basicExampleNav"
             aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
