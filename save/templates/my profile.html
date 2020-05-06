@@ -26,8 +26,13 @@
 
                 <div id="profileeditdiv" class="row d-none">
                     <div class="col-md-6 py-5 pl-5">
-                        <img src="{%static 'assets/img/profile.png' %}" alt="" height="200" width="200"
+                    {% if request.user.profilePicx.img %}
+                        <img src="{{ request.user.profilePicx.img.url }}"  style="border-radius:100px;"alt="" height="200" width="200"
                             class="img-responsive thumbnail">
+                    {% else %}
+                            <img src="{%static 'assets/img/profile.png' %}" alt="" height="200" width="200"
+                            class="img-responsive thumbnail">
+                    {% endif %}
                     </div>
                     <div class="col-md-10">
                         <p class="px-3 h2"> User information</p>
@@ -60,8 +65,14 @@
                                     <button class="btn btn-default bg-white btn-sm" type="submit">
                                         <b class="text-danger">Discard</b></button>
                                 </div>
+                                
                             </div>
                         </form>
+                        <form method="POST" action="/profile/" enctype="multipart/form-data" name="profile">
+                                        {% csrf_token %}
+                                        <input type="file" name="image_file" placeholder="input your password" class="upload-input"  accept="image/jpg, image/gif/png, image/jpeg" required="" id="id_file">
+                                        <button class="btn btn-primary" type="submit" >UPLOAD Profile</button>
+                                    </form>
 
                     </div>
                 </div>

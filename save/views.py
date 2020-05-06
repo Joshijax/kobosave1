@@ -7,6 +7,9 @@ from .forms import ProfileUploadForm
 from .models import ProfilPicx
 from django.contrib.auth.models import User
 from django.contrib import messages 
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
+from django.urls import reverse
 # Create your views here.
 
 
@@ -43,6 +46,26 @@ def orders(request):
 
 @login_required(login_url='/')
 def profile(request):
+    print(request.method)
+    if request.method == 'POST':
+        image_file = request.FILES['image_file']
+        
+        if settings.USE_S3:
+            obj = User.objects.get(id=request.user.id)
+            profile = obj.profilePicx
+            profile.img = image_file
+            profile.save()
+            # upload = ProfilPicx(user= request.user, img=image_file)
+            # upload.save()
+            # image_url = upload.img.url
+        else:
+            fs = FileSystemStorage()
+            filename = fs.save(image_file.name, image_file)
+            image_url = fs.url(filename)
+            return render(request, 'upload.html', {
+                'image_url': image_url
+            })
+        return redirect(reverse('profile'))
     
     return render(request, 'my profile.html',)
 

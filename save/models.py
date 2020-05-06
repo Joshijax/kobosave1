@@ -16,14 +16,13 @@ class ProfilPicx(models.Model):
     img = models.FileField(upload_to = '', null=False, blank=False)
 
     def save(self, *args, **kwargs):
-        if not self.img:
-            self.img = 'U'
+        
         return super().save(*args, **kwargs)
-    def delete(self, *args, **kwargs):
-        if os.path.join(settings.MEDIA_ROOT, self.img.name) == os.path.join(settings.MEDIA_ROOT, 'U'):
-            return True
-        else:
-            os.remove(os.path.join(settings.MEDIA_ROOT, self.img.name))
+    # def delete(self, *args, **kwargs):
+    #     if os.path.join(settings.MEDIA_ROOT, self.img.name) == os.path.join(settings.MEDIA_ROOT, 'U'):
+    #         return True
+    #     else:
+    #         os.remove(os.path.join(settings.MEDIA_ROOT, self.img.name))
         
 
 

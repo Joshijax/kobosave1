@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'la2(pl4ja@1r2**%5pxy))m@9rg0bhfx=l)57)oe=25h)(xd!b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'kobosave.herokuapp.com']
 
@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'save',
-
+    'storages',
     'allauth',
     'allauth.account',
 ]
@@ -170,3 +170,74 @@ EMAIL_HOST_PASSWORD = 'teagcjkakfvbxxcm'
 EMAIL_USE_TLS = True
 MAIL_USE_SSL = False
 EMAIL_PORT = 587
+# if USE_S3:
+#     AWS_ACCESS_KEY_ID = 'AKIASXSK3YWJLCEO6K6O'
+#     AWS_SECRET_ACCESS_KEY = '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'
+#     AWS_STORAGE_BUCKET_NAME = 'joshijax'
+#     AWS_S3_FILE_OVERWRITE = False
+#     AWS_DEFAULT_ACL = None
+#     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+    
+#     STATIC_LOCATION = 'static'
+    
+#     STATICFILES_STORAGE = 'kobosave.storage_backends.StaticStorage'
+#     # s3 public media settings
+#     PUBLIC_MEDIA_LOCATION = 'media'
+#     # MEDIA_URL = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+#     DEFAULT_FILE_STORAGE = 'kobosave.storage_backends.PublicMediaStorage'
+# else:
+
+#     STATIC_URL = '/staticfiles/'
+#     STATIC_ROOT =  os.path.join(BASE_DIR, 'staticfiles')
+#     MEDIA_URL = '/mediafiles/'
+#     MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+    
+
+
+#S3 BUCKETS CONFIG
+USE_S3 = True
+if USE_S3:
+    AWS_ACCESS_KEY_ID = 'AKIASXSK3YWJLCEO6K6O'
+    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_STORAGE_BUCKET_NAME = 'joshijax'
+    AWS_LOCATION = 'static'
+    AWS_S3_SECURE_URLS = False
+    AWS_S3_FILE_OVERWRITE = False
+    AWS_DEFAULT_ACL = None
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATIC_LOCATION = 'static'
+    STATICFILES_STORAGE = 'kobosave.storage_backends.StaticStorage'
+    AWS_S3_CUSTOM_DOMAIN='%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+    ] 
+    STATIC_URL='https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+    ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+    STATICFILES_FINDERS = (           'django.contrib.staticfiles.finders.FileSystemFinder',    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    )
+
+    S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME  
+    PUBLIC_MEDIA_LOCATION = 'media'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+    MEDIA_ROOT = 'http://%s.s3.amazonaws.com//media/'  % AWS_STORAGE_BUCKET_NAME 
+    DEFAULT_FILE_STORAGE = 'kobosave.storage_backends.PublicMediaStorage'
+
+
+
+
+
+# '''
+# <?xml version="1.0" encoding="UTF-8"?>
+# <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+# <CORSRule>
+#     <AllowedOrigin>*</AllowedOrigin>
+#     <AllowedMethod>GET</AllowedMethod>
+#     <AllowedMethod>POST</AllowedMethod>
+#     <AllowedMethod>PUT</AllowedMethod>
+#     <AllowedHeader>*</AllowedHeader>
+# </CORSRule>
+# </CORSConfiguration>
+# '''
