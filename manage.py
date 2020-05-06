@@ -3,6 +3,11 @@
 import os
 import sys
 
+# try:
+#     import pymysql
+#     pymysql.install_as_MySQLdb()
+# except ImportError:
+#     print( "Failed to import pymysql")
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kobosave.settings')

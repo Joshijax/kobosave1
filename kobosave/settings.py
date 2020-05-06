@@ -77,21 +77,20 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-# 'default': {
-# 'ENGINE': 'django.db.backends.mysql',
-# 'NAME': 'kobosave',
-# 'USER': 'root',
-# 'PASSWORD': '',
-# 'HOST': 'localhost',
-# 'PORT': '3306',
-# 'OPTIONS': {
-# 'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'"
-# }
-# }
-# }
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.mysql',
+'NAME': 'kobosave',
+'USER': 'admin',
+'PASSWORD': 'treasure12',
+'HOST': 'database-2.cgbpxoayuxpw.us-east-2.rds.amazonaws.com',
+'PORT': '3306',
+'OPTIONS': {
+'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'"
+}
+}
+}
  
-
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
