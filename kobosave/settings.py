@@ -9,10 +9,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY=config('SECRET_KEY')
+SECRET_KEY = 'la2(pl4ja@1r2**%5pxy))m@9rg0bhfx=l)57)oe=25h)(xd!b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG=config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'kobosave.herokuapp.com']
 
@@ -161,13 +161,12 @@ ACCOUNT_FORMS = {'login': 'save.forms.LoginForm'}
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/payment-dashboard/'
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+   
+   
+EMAIL_HOST_USER = 'kobosaveng@gmail.com'
+EMAIL_HOST_PASSWORD = 'teagcjkakfvbxxcm'
 EMAIL_USE_TLS = True
 MAIL_USE_SSL = False
 EMAIL_PORT = 587
-
-
