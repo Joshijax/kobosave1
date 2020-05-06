@@ -202,24 +202,24 @@ if USE_S3:
     AWS_ACCESS_KEY_ID = 'AKIASXSK3YWJLCEO6K6O'
     AWS_SECRET_ACCESS_KEY = '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'
     AWS_STORAGE_BUCKET_NAME = 'joshijax'
-    AWS_LOCATION = 'static'
+    # AWS_LOCATION = 'static'
     AWS_S3_SECURE_URLS = False
     AWS_S3_FILE_OVERWRITE = False
     AWS_DEFAULT_ACL = None
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    STATIC_LOCATION = 'static'
-    STATICFILES_STORAGE = 'kobosave.storage_backends.StaticStorage'
+    # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    # STATIC_LOCATION = 'static'
+    # STATICFILES_STORAGE = 'kobosave.storage_backends.StaticStorage'
     AWS_S3_CUSTOM_DOMAIN='%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static'),
-    ] 
+    # STATICFILES_DIRS = [
+    #     os.path.join(BASE_DIR, 'static'),
+    # ] 
     
-    STATIC_ROOT = os.path.join(BASE_DIR, 'http://%s.s3.amazonaws.com//static/'  % AWS_STORAGE_BUCKET_NAME)
-    STATIC_URL='https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-    ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-    STATICFILES_FINDERS = (           'django.contrib.staticfiles.finders.FileSystemFinder',    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    )
+    # STATIC_ROOT = os.path.join(BASE_DIR, 'http://%s.s3.amazonaws.com//static/'  % AWS_STORAGE_BUCKET_NAME)
+    # STATIC_URL='https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+    # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+    # STATICFILES_FINDERS = (           'django.contrib.staticfiles.finders.FileSystemFinder',    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # )
 
     S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME  
     PUBLIC_MEDIA_LOCATION = 'media'
