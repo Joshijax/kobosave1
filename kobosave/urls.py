@@ -23,7 +23,7 @@ from django.conf.urls import handler404
 
 urlpatterns = [
     path('', include('save.urls')),
-    path('admin/', admin.site.urls),
+    path('kobosave_admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 handler404 = 'save.views.handler404'
