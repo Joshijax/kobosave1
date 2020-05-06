@@ -214,7 +214,8 @@ if USE_S3:
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
     ] 
-    STATIC_ROOT = 'http://%s.s3.amazonaws.com//static/'  % AWS_STORAGE_BUCKET_NAME
+    
+    STATIC_ROOT = os.path.join(BASE_DIR, 'http://%s.s3.amazonaws.com//static/'  % AWS_STORAGE_BUCKET_NAME)
     STATIC_URL='https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
     ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
     STATICFILES_FINDERS = (           'django.contrib.staticfiles.finders.FileSystemFinder',    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
