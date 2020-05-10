@@ -12,8 +12,72 @@
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
      <!--customstyles-->
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/css.css' %}">
      <link rel="stylesheet" href="{% static 'assets/css/fontawesome/css/all.css' %}">
+
     <title>{{page_title}}</title>
+{% if  request.path == '/payment-dashboard/' %}
+    <style>
+    .CCBackground {
+ 
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    }
+
+    .outercontainer {
+    padding-top: 50px;
+    height: 95%;
+    background: #fff;
+    margin: 50px auto;
+    border: 1px solid #a6a6a6;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    background: #607d8b;
+    }
+
+    .formcontainer {
+    margin-top: 20px;
+    }
+
+    .purchasebtn {
+    margin-top: 20px;
+    }
+
+    .btn-success {
+    background-color: #0032a0;
+    }
+    @media screen and (max-device-width: 480px) {
+        .outercontainer {
+    
+    height: 85%;
+    
+    
+    
+    width: 351px;
+    
+    }
+    }
+
+</style>
+{% endif %}
 </head>
 <body>
     {% include "base/navbar.html" %}
@@ -26,6 +90,7 @@
     <script type='text/javascript' src="{% static 'assets/js/popper.min.js' %}"></script>
     <!--boostrap4 js-->
     <script type='text/javascript' src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'assets/js/scripts1.js' %}"></script>
     <!-- scripts -->
     {% include "base/scripts.html" %}
 </script>  

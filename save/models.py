@@ -4,6 +4,9 @@ from django.db.models.signals import post_save, post_delete, post_init
 from django.dispatch import receiver
 from django.conf import settings
 import os
+from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
+
+
 # Create your models here.
 class Company(models.Model):
     user = models.OneToOneField(User, related_name="company", on_delete=models.CASCADE,)
@@ -24,6 +27,14 @@ class ProfilPicx(models.Model):
     #     else:
     #         os.remove(os.path.join(settings.MEDIA_ROOT, self.img.name))
         
+
+
+
+class Payment(models.Model):
+    cc_number = CardNumberField( ('card number'))
+    cc_expiry = CardExpiryField( ('expiration date'))
+    cc_code = SecurityCodeField( ('security code'))
+
 
 
 @receiver(post_save, sender= settings.AUTH_USER_MODEL)

@@ -29,7 +29,21 @@
     };
 </script>
 {% elif  request.path == '/payment-dashboard/' %}
+
 <script>
+    $("#addcardbtn").click(function(){
+      $('.CCBackground').show()
+
+    });
+
+    $(window).click(function(e) {
+    var target = $( event.target );
+    if ( target.is( ".CCBackground" ) ) {
+    $('.CCBackground').hide();
+    }
+
+    });
+
     var autosave = document.querySelector("input[id=autosave]");
     var quickPay = document.querySelector("input[id=quickPay]");
     var autosave = document.getElementById("autosave");

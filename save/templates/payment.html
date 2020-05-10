@@ -65,20 +65,34 @@
                         <section id="pay_sec_1">
                             <div class="row p-2">
                                 <div class="col-md-6 h6">
-                                    <div class="card shadow py-4 pl-5"
+                                    <div class="card shadow "
                                         style="border-radius: 25px; border: 1px solid rgba(12, 153, 60, 0.4); ">
-                                        <p class="text-left p-1">Asemota Izoduwa</p>
-                                        <p class="text-left p-1">2143765089</p>
-                                        <p class="text-left p-1">**** **** **** **** 6789</p>
+                                        <div class="credit-card mastercard selectable">
+                                        <div class="credit-card-last4">
+                                            8210
+                                        </div>
+                                        <div>Asemota Izoduwa</div>
+                                        <div style="margin-top: 5px;" class="jp-card-shiny"></div>
+                                        <div class="credit-card-expiry">
+                                            10/22
+                                        </div>
+                                    </div>
                                     </div>
                                     <p class="text-success h6 pt-3">Active</p>
                                 </div>
                                 <div id="blibox" class="pl-3 h6">
-                                    <div class="col-md-12 bg-white pb-1"
-                                        style="border-radius: 25px; box-shadow: -5px 0 7px -5px;">
-                                        <p class="text-left p-2">Asemota Izod</p>
-                                        <p class="text-left p-2">2143765089</p>
-                                        <p class="text-left pb-4">**** ****</p>
+                                    <div class="col-md-12 bg-white "
+                                        style="border-radius: 25px; box-shadow: -5px 0 7px -5px; padding-left: 0px; ">
+                                        <div class="credit-card visa selectable">
+                                            <div class="credit-card-last4">
+                                                4242
+                                            </div>
+                                            <div>Asemota Izoduwa</div>
+                                            <div style="margin-top: 5px;" class="jp-card-shiny"></div>
+                                            <div class="credit-card-expiry">
+                                                08/25
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-2 pt-4">
@@ -111,20 +125,35 @@
                         <section id="pay_sec_2" class="d-none">
                             <div class="row p-2">
                                 <div class="col-md-5 h6">
-                                    <div class="card shadow py-4 pl-5"
+                                    <div class="card shadow "
                                         style="border-radius: 25px; border: 1px solid rgba(12, 153, 60, 0.4); ">
-                                        <p class="text-left p-1">Asemota Izoduwa</p>
-                                        <p class="text-left p-1">2143765089</p>
-                                        <p class="text-left p-1">**** **** **** **** 6789</p>
+                                        <div class="credit-card mastercard selectable">
+                                        <div class="credit-card-last4">
+                                            8210
+                                        </div>
+                                        <div>Asemota Izoduwa</div>
+                                        <div style="margin-top: 5px;" class="jp-card-shiny"></div>
+                                        <div class="credit-card-expiry">
+                                            10/22
+                                        </div>
+                                    </div>
                                     </div>
                                     <p class="text-success h6 pt-3">Active</p>
                                 </div>
                                 <div class="col-md-6 h6"></div>
                                 <div class="col-md-5 h6 dropdown">
-                                    <div class="card shadow py-4 pl-5 dropbtn" style="border-radius: 25px;">
-                                        <p class="text-left p-1">Asemota Izoduwa</p>
-                                        <p class="text-left p-1">2143765089</p>
-                                        <p class="text-left p-1">First Bank Nigeria</p>
+                                    <div class="card shadow dropbtn" style="border-radius: 25px;">
+                                        <div class="credit-card mastercard selectable">
+                                        <div class="credit-card-last4">
+                                            8210
+                                        </div>
+                                        <div>Asemota Izoduwa</div>
+                                        <div style="margin-top: 5px;" class="jp-card-shiny"></div>
+                                        <div class="credit-card-expiry">
+                                            10/22
+                                        </div>
+                                    </div>
+
                                     </div>
                                     <div class="dropdown-content">
                                         <a href="#"
@@ -137,10 +166,17 @@
 
                                 </div>
                                 <div class="col-md-5 h6 dropdown">
-                                    <div class="card shadow py-4 pl-5 dropbtn" style="border-radius: 25px;">
-                                        <p class="text-left p-1">Asemota Izoduwa</p>
-                                        <p class="text-left p-1">1233769073</p>
-                                        <p class="text-left p-1">Gurantee Trust Bank</p>
+                                    <div class="card shadow dropbtn" style="border-radius: 25px;">
+                                        <div class="credit-card visa selectable">
+                                            <div class="credit-card-last4">
+                                                4242
+                                            </div>
+                                            <div>Asemota Izoduwa</div>
+                                            <div style="margin-top: 5px;" class="jp-card-shiny"></div>
+                                            <div class="credit-card-expiry">
+                                                08/25
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="dropdown-content">
                                         <a href="#"
@@ -153,7 +189,7 @@
                                 </div>
                             </div>
                             <div class="row p-2">
-                                <div class="col-md-5 h6 dropdown">
+                                {% comment %} <div class="col-md-5 h6 dropdown">
                                     <div class="card shadow py-4 pl-5 dropbtn" style="border-radius: 25px;">
                                         <p class="text-left p-1">Victor Uwa</p>
                                         <p class="text-left p-1">1633765065</p>
@@ -167,17 +203,18 @@
                                             class="btn btn-outline-danger btn-rounded btn-block my-4 waves-effect z-depth-0 deletecard">
                                             <span>delete card</span></a>
                                     </div>
-                                </div>
+                                </div> {% endcomment %}
                                 <div class="col-md-5 h6">
-                                    <div class="card shadow py-4 pl-5" style="border-radius: 25px;">
+                                    <div class="card shadow " style="border-radius: 25px;">
+                                    <div style="background: #4862e2;" class="credit-card nonee selectable">
                                         <div class="row">
-                                            <p class="text-left h2 col-6 py-4 my-3">Add Card</p>
+                                            <p  class="text-left h2 col-6 py-4 my-3">Add Card</p>
                                             <div class="text-left h2 col-4 pl-4 py-1">
-                                                <button class="fa fa-plus" aria-hidden="true shadow" id="addcardbtn">
+                                                <button  class="fa fa-plus" aria-hidden="true shadow" id="addcardbtn">
                                                 </button>
                                             </div>
                                         </div>
-
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -193,4 +230,7 @@
         <!-- <a href="sign in.html" class="btn btn-white font-weight-bold text-center">Join our
             waitlist</a> -->
     </footer>
+
+    {% include 'base/add-card.html' %}
+    
  {% endblock content %}
