@@ -170,30 +170,7 @@ EMAIL_HOST_PASSWORD = '*****'
 EMAIL_USE_TLS = True
 MAIL_USE_SSL = False
 EMAIL_PORT = 587
-# if USE_S3:
-#     AWS_ACCESS_KEY_ID = 'AKIASXSK3YWJLCEO6K6O'
-#     AWS_SECRET_ACCESS_KEY = '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'
-#     AWS_STORAGE_BUCKET_NAME = 'joshijax'
-#     AWS_S3_FILE_OVERWRITE = False
-#     AWS_DEFAULT_ACL = None
-#     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-    
-#     STATIC_LOCATION = 'static'
-    
-#     STATICFILES_STORAGE = 'kobosave.storage_backends.StaticStorage'
-#     # s3 public media settings
-#     PUBLIC_MEDIA_LOCATION = 'media'
-#     # MEDIA_URL = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-#     DEFAULT_FILE_STORAGE = 'kobosave.storage_backends.PublicMediaStorage'
-# else:
-
-#     STATIC_URL = '/staticfiles/'
-#     STATIC_ROOT =  os.path.join(BASE_DIR, 'staticfiles')
-#     MEDIA_URL = '/mediafiles/'
-#     MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
-    
+ 
 
 
 #S3 BUCKETS CONFIG
