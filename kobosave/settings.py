@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'la2(pl4ja@1r2**%5pxy))m@9rg0bhfx=l)57)oe=25h)(xd!b'
+SECRET_KEY = '******'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -165,8 +165,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
    
    
-EMAIL_HOST_USER = 'kobosaveng@gmail.com'
-EMAIL_HOST_PASSWORD = 'teagcjkakfvbxxcm'
+EMAIL_HOST_USER = '****'
+EMAIL_HOST_PASSWORD = '*****'
 EMAIL_USE_TLS = True
 MAIL_USE_SSL = False
 EMAIL_PORT = 587
@@ -199,8 +199,8 @@ EMAIL_PORT = 587
 #S3 BUCKETS CONFIG
 USE_S3 = True
 if USE_S3:
-    AWS_ACCESS_KEY_ID = 'AKIASXSK3YWJLCEO6K6O'
-    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_ACCESS_KEY_ID = '****'
+    AWS_SECRET_ACCESS_KEY = '****'
     AWS_STORAGE_BUCKET_NAME = 'joshijax'
     # AWS_LOCATION = 'static'
     AWS_S3_SECURE_URLS = False
